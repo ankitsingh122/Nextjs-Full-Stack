@@ -48,6 +48,7 @@ function Sidebar() {
     setIsRegistering(isRegistering); 
     onOpen();
   };
+  
 
   const handleLoginSubmit = async () => {
     if(!email || 
@@ -203,6 +204,7 @@ function Sidebar() {
       </Navbar>
 
       <Modal
+        className=" bg-black bg-opacity-30"
         backdrop={backdrop}
         isOpen={isOpen}
         onClose={onClose}
@@ -210,16 +212,16 @@ function Sidebar() {
         placement="top-center"
       >
         <ModalContent>
-          <ModalHeader className="flex flex-col gap-1">
-            {isRegistering ? "Sign Up" : "Log in"}
+          <ModalHeader className="flex flex-col items-center gap-1 ">
+            {isRegistering ? "Sign Up" : "Log In"}
           </ModalHeader>
           <ModalBody>
             {isRegistering && (
               <Input
                 autoFocus
-                endContent={
-                  <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                }
+                // endContent={
+                //   <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                // }
                 label="Name"
                 placeholder="Enter your Name"
                 variant="bordered"
@@ -263,7 +265,14 @@ function Sidebar() {
                   Register Now!
                 </div>
               ) : (
-                ""
+                <div
+                  className=" cursor-pointer"
+                  color="primary"
+                  size="sm"
+                  onClick={() => handleOpen("blur", true)}
+                >
+                  Login Here!
+                </div>
               )}
             </div>
           </ModalBody>
