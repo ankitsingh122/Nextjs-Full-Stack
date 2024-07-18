@@ -48,7 +48,6 @@ function Sidebar() {
     setIsRegistering(isRegistering); 
     onOpen();
   };
-  
 
   const handleLoginSubmit = async () => {
     if(!email || 
