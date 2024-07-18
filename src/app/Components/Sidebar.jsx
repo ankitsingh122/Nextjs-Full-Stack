@@ -169,6 +169,7 @@ function Sidebar() {
                   showFallback
                   src="https://images.unsplash.com/broken"
                 />
+                
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
                 <DropdownItem key="profile" className="h-14 gap-2">
